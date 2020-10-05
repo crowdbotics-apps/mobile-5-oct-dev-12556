@@ -4,6 +4,42 @@ const initialState = { mobileoctAPI: [] }
 
 export default function apiReducer(state = initialState, action) {
   switch (action.type) {
+    case types.API_V1_BVHGVH_LIST:
+    case types.API_V1_BVHGVH_LIST_SUCCEEDED:
+    case types.API_V1_BVHGVH_LIST_FAILED:
+      return Object.assign({}, state, {
+        mobileoctAPI: [...state.mobileoctAPI, action.response]
+      })
+    case types.API_V1_BVHGVH_CREATE:
+    case types.API_V1_BVHGVH_CREATE_SUCCEEDED:
+    case types.API_V1_BVHGVH_CREATE_FAILED:
+      return Object.assign({}, state, {
+        mobileoctAPI: [...state.mobileoctAPI, action.response]
+      })
+    case types.API_V1_BVHGVH_READ:
+    case types.API_V1_BVHGVH_READ_SUCCEEDED:
+    case types.API_V1_BVHGVH_READ_FAILED:
+      return Object.assign({}, state, {
+        mobileoctAPI: [...state.mobileoctAPI, action.response]
+      })
+    case types.API_V1_BVHGVH_UPDATE:
+    case types.API_V1_BVHGVH_UPDATE_SUCCEEDED:
+    case types.API_V1_BVHGVH_UPDATE_FAILED:
+      return Object.assign({}, state, {
+        mobileoctAPI: [...state.mobileoctAPI, action.response]
+      })
+    case types.API_V1_BVHGVH_PARTIAL_UPDATE:
+    case types.API_V1_BVHGVH_PARTIAL_UPDATE_SUCCEEDED:
+    case types.API_V1_BVHGVH_PARTIAL_UPDATE_FAILED:
+      return Object.assign({}, state, {
+        mobileoctAPI: [...state.mobileoctAPI, action.response]
+      })
+    case types.API_V1_BVHGVH_DELETE:
+    case types.API_V1_BVHGVH_DELETE_SUCCEEDED:
+    case types.API_V1_BVHGVH_DELETE_FAILED:
+      return Object.assign({}, state, {
+        mobileoctAPI: [...state.mobileoctAPI, action.response]
+      })
     case types.API_V1_CUSTOMTEXT_LIST:
     case types.API_V1_CUSTOMTEXT_LIST_SUCCEEDED:
     case types.API_V1_CUSTOMTEXT_LIST_FAILED:

@@ -1,8 +1,28 @@
 import axios from "axios"
 const mobileoctAPI = axios.create({
-  baseURL: "https://mobile-5-oct-dev-12556.botics.co/",
+  baseURL: "https://mobile-5-oct-dev-12556-prod.herokuapp.com/",
   headers: { Accept: "application/json", "Content-Type": "application/json" }
 })
+function api_v1_bvhgvh_list(action) {
+  return mobileoctAPI.get(`/api/v1/bvhgvh/`)
+}
+function api_v1_bvhgvh_create(action) {
+  return mobileoctAPI.post(`/api/v1/bvhgvh/`, { data: action.data })
+}
+function api_v1_bvhgvh_read(action) {
+  return mobileoctAPI.get(`/api/v1/bvhgvh/${action.id}/`)
+}
+function api_v1_bvhgvh_update(action) {
+  return mobileoctAPI.put(`/api/v1/bvhgvh/${action.id}/`, { data: action.data })
+}
+function api_v1_bvhgvh_partial_update(action) {
+  return mobileoctAPI.patch(`/api/v1/bvhgvh/${action.id}/`, {
+    data: action.data
+  })
+}
+function api_v1_bvhgvh_delete(action) {
+  return mobileoctAPI.delete(`/api/v1/bvhgvh/${action.id}/`)
+}
 function api_v1_customtext_list(action) {
   return mobileoctAPI.get(`/api/v1/customtext/`)
 }
@@ -79,6 +99,12 @@ function rest_auth_user_partial_update(action) {
   return mobileoctAPI.patch(`/rest-auth/user/`, { data: action.data })
 }
 export const apiService = {
+  api_v1_bvhgvh_list,
+  api_v1_bvhgvh_create,
+  api_v1_bvhgvh_read,
+  api_v1_bvhgvh_update,
+  api_v1_bvhgvh_partial_update,
+  api_v1_bvhgvh_delete,
   api_v1_customtext_list,
   api_v1_customtext_read,
   api_v1_customtext_update,
